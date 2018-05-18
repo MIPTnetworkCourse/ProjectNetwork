@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+ <html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Classification of news</title>
+ </head>
+ <body bgcolor="86ddf6">
+ 	<table border="1" bordercolor="110ea2" width="800" align="center"> 
+ 		<tr> 
+ 		<td bgcolor="e6e6fa"> 
+ <!--Шапка сайта.-->
+
+ <table border="1" bordercolor="110ea2" width="790" height="200"
+ cellpadding="10"> 
+ 	<tr> 
+ 	<th background="{{ url_for('static', filename='img/main_img.png') }}"> 
+ 		<h1><font color="110ea2" face="Monotype Corsiva">
+		CLASSIFICATION OF NEWS</font> 
+ 		</h1> 
+ 	</th> 
+ 	</tr> 
+ </table>
+
+ <!--Текст статьи--> 
+ <table border="1" bordercolor="110ea2" width="790" cellpadding="10"> 
+ 	<tr> 
+ 	<td rowspan="4" width="600" bgcolor="e6e6fa"> 
+ 		<p style="text-indent:20px"><span style = "font-size: 30px;">
+ 		<font face="Monotype Corsiva"> <font color="0e1772">
+		<strong>Classify</strong></font></font></span></p>
+
+			<div class="container">
+
+    <div id="controlPanel" class="row">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="input-group">
+                    <form action="/" class="form-inline" method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="inputPhrase">Enter text for analysis</label>
+                                    <input name="text" type="text" class="form-control" id="inputPhrase" placeholder="Text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div style="margin-top: 10px; margin-bottom: 10px" class="col-lg-3">
+                                <button type="submit" class="btn btn-info">Get</button>
+                            </div>
+                        </div>
+                    </form>
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+        {% if results %}
+		
+				<table width="100%">
+						<thead>
+							<tr>
+								<th>Category: </th>
+							</tr>
+						  </thead>
+						<tbody>
+						 {% for k, v in results.items() %}
+							<tr>
+								<td>{{ v }}</td>
+							</tr>
+						 {%- endfor %}
+						</tbody>
+				</table>
+
+        {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+	</td>
+
+ <!--Сайдбар--> 
+ <td bgcolor="e6e6fa" align="left"> 
+	<h3>Menu</h3> 
+ 		<p><img src="{{ url_for('static', filename='img/marker.png') }}">
+			<a href="{{ url_for('index') }}" >Home</a></p> 
+ 		<p><img src="{{ url_for('static', filename='img/marker.png') }}">
+			<a href="{{ url_for('how') }}" >How to classify</a></p>
+ 		<p><img src="{{ url_for('static', filename='img/marker.png') }}">
+			<a href="{{ url_for('contacts') }}" >Contacts</a></p>  
+ </td> 
+ </tr> 
+ <tr> 
+ 
+ </td> 
+ </tr> 
+ </tr> 
+ </table> 
+ </table> 
+ </body> 
+ </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+ <html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>Classification of news</title>
+ </head>
+ <body bgcolor="86ddf6">
+ <table border="1" bordercolor="110ea2" width="800" align="center"> 
+ <tr> 
+ <td bgcolor="e6e6fa"> 
+ <!--Шапка сайта.-->
+
+ <table border="1" bordercolor="110ea2" width="790" height="200"
+ cellpadding="10"> 
+ <tr> 
+ <th background="{{ url_for('static', filename='img/main_img.png') }}"> 
+ <h1><font color="110ea2" face="Monotype Corsiva">
+CLASSIFICATION OF NEWS</font> 
+ 
+ </h1> 
+ </th> 
+ </tr> 
+ </table> 
+ <!--Текст статьи--> 
+ <table border="1" bordercolor="110ea2" width="790" cellpadding="10"> 
+ <tr> 
+ <td rowspan="4" width="600" bgcolor="e6e6fa"> 
+ <p style="text-indent:20px"><span style = "font-size: 30px;">
+ <font face="Monotype Corsiva"> <font color="0e1772">
+<strong>Home</strong></font></font></span></p>
+<p><form method="LINK" action="{{ url_for('main') }}">
+	<button>
+    <img src="{{ url_for('static', filename='img/start.png') }}" alt="Start" style="vertical-align: middle">
+   </button>
+</form></p>
+ </td> 
+ <!--Сайдбар--> 
+ <td bgcolor="e6e6fa" align="left"> 
+ <h3>Menu</h3> 
+ <p><img src="{{ url_for('static', filename='img/marker.png') }}">
+<a href="{{ url_for('index') }}" >Home</a></p> 
+ <p><img src="{{ url_for('static', filename='img/marker.png') }}">
+<a href="{{ url_for('how') }}" >How to classify</a></p>
+ <p><img src="{{ url_for('static', filename='img/marker.png') }}">
+<a href="{{ url_for('contacts') }}" >Contacts</a></p>  
+ </td> 
+ </tr> 
+ <tr> 
+ 
+ </td> 
+ </tr> 
+ </tr> 
+ </table> 
+ </table> 
+ </body> 
+ </html>
